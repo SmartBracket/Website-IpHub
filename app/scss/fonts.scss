@@ -1,0 +1,7 @@
+@import 'mixins';
+
+@include font-face('Montserrat', 'Montserrat-Medium', 500);
+@include font-face('Montserrat', 'Montserrat-Regular', 400);
+
+@include font-face('STIX Two Text', 'STIXTwoText-Medium', 500);
+@include font-face('STIX Two Text', 'STIXTwoText-Regular', 400);

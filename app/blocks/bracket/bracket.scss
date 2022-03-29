@@ -1,0 +1,23 @@
+@import '../../scss/**/_*';
+
+.bracket{
+   @include position(relative);
+   
+   &_left{
+      &::before{
+         content:"";
+         @include position(absolute);
+         background: url(../imgs/bracket.svg) no-repeat center/contain;
+      }
+   }
+   
+   &_right{
+
+      &::after {
+         content:"";
+         transform: scaleX(-1);
+         background: url(../imgs/bracket.svg) no-repeat center/contain;
+      }
+   }
+}
+

@@ -1,0 +1,21 @@
+@import "../../scss/**/_*";
+
+.text {
+   max-width: 100%;
+   &__title {
+      margin-bottom: 16px;
+      @include h2;
+   }
+
+   &__paragraph {
+      max-width: 700px;
+      width: 100%;
+      margin-bottom: 50px;
+      @include sh3;
+
+      @media (max-width: 1000px) {
+         max-width: 580px;
+         margin-bottom: 35px;
+      }
+   }
+}

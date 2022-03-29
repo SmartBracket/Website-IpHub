@@ -1,0 +1,6 @@
+@import '../../scss/**/_*';
+
+.wrap{
+   width: 100%;
+   @include flex(row, space-between, center);
+}

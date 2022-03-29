@@ -1,0 +1,12 @@
+@import "../../scss/**/_*";
+
+.decor {
+   position: relative;
+   @include flex(row, center, center);
+   width: 100%;
+
+   &__img {
+      position: absolute;
+      max-width: 100%;
+   }
+}

@@ -1,0 +1,59 @@
+@import "../../scss/**/_*";
+
+.popup {
+   display: none;
+   &_active {
+      overflow: auto;
+      opacity: 0;
+      width: 100vw;
+      height: 100vh;
+      @include flex(row, center, center);
+      @include position(fixed, $top: 0, $left: 0);
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+      cursor: auto;
+   }
+
+   &__window {
+      display: none;
+      position: relative;
+      &_active {
+         opacity: 0;
+      }
+   }
+
+   &__close {
+      width: 26px;
+      height: 26px;
+      @include position(absolute, $top: 20px, $right: 20px);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+      cursor: pointer;
+
+      &::before {
+         content: "";
+         transform-origin: right;
+         transform: rotateZ(-45deg);
+         @include position(absolute, $right: 0, $top: 0);
+         background-color: $red;
+         width: 36px;
+         height: 1px;
+      }
+      &::after {
+         content: "";
+         transform-origin: left;
+         transform: rotateZ(45deg);
+         @include position(absolute, $left: 0, $top: 0);
+         background-color: $red;
+         width: 36px;
+         height: 1px;
+      }
+      &_white {
+         &::before,
+         &::after {
+            background-color: $white;
+         }
+      }
+   }
+}

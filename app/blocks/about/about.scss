@@ -1,0 +1,133 @@
+@import "../../scss/**/_*";
+
+.about {
+   &__container {
+      margin-top: 210px;
+      display: grid;
+      grid-template-columns: minmax(230px, 335px) 1fr;
+      column-gap: 48px;
+
+      @media (max-width: 1000px) {
+         margin-top: 120px;
+         grid-template-columns: 1fr;
+      }
+
+      @media (max-width: 768px) {
+         margin-top: 80px;
+      }
+
+      @media (max-width: 480px) {
+         margin-top: 60px;
+      }
+   }
+
+   &__decor {
+      height: 340px;
+      flex: 0 1 340px;
+      background: url(../imgs/decor__item2-1.png) no-repeat top/100%;
+
+      @media (max-width: 1000px) {
+         display: none;
+      }
+   }
+
+   &__decor-img {
+      @include position(absolute, $top: -30px, $left: -30px);
+   }
+
+   &__title {
+      color: $white;
+   }
+
+   &__paragraph {
+      color: $grey;
+   }
+
+   &__list {
+      display: grid;
+      grid-template-columns: minmax(330px, 1fr) minmax(330px, 1fr);
+      grid-auto-rows: 137px;
+      gap: 20px;
+
+      @media (max-width: 1000px) {
+         grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 768px) {
+         grid-auto-rows: auto;
+      }
+
+      @media (max-width: 480px) {
+         grid-template-columns: 1fr;
+         gap: 15px;
+      }
+   }
+
+   &__item {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      cursor: default;
+   }
+
+   &__item-count {
+      margin-bottom: 5px;
+      font-family: "STIX Two Text", sans-serif;
+      font-size: 36px;
+      font-weight: 500;
+      color: $white;
+
+      @media (max-width: 768px) {
+         font-size: 28px;
+      }
+   }
+
+   &__item-desc {
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 160%;
+      color: $grey;
+
+      @media (max-width: 1000px) {
+      }
+   }
+
+   &__practic {
+      margin-top: 100px;
+
+      @media (max-width: 768px) {
+         margin-top: 80px;
+      }
+
+      @media (max-width: 480px) {
+         margin-top: 60px;
+      }
+   }
+
+   &__practic-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 137px;
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+
+      @media (max-width: 1000px) {
+         grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 768px) {
+         grid-template-columns: 1fr;
+      }
+
+      @media (max-width: 480px) {
+         gap: 15px;
+      }
+   }
+
+   &__practic-item {
+      width: 100%;
+      height: 100%;
+   }
+}

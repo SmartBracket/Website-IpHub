@@ -1,0 +1,61 @@
+@import "../../scss/**/_*";
+
+.info-item {
+   position: relative;
+   z-index: 0;
+   border-radius: 8px;
+
+   &_gradient {
+      &::before {
+         content: "";
+         position: absolute;
+         z-index: -2;
+         top: -1px;
+         left: -1px;
+         right: 0;
+         bottom: 0;
+         border-radius: 8px;
+         background: linear-gradient(-35deg, #202020 70%, $red);
+      }
+
+      &::after {
+         content: "";
+         position: absolute;
+         z-index: -1;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         border-radius: 8px;
+         background: #202020;
+         transition: background 0.3s;
+      }
+   }
+
+   &_flexed {
+      border-radius: 8px;
+      @include flex(row, center, center);
+      @include normal;
+      transition: 0.3s;
+
+      &__img {
+         opacity: 0.5;
+         transition: opacity 0.3s;
+         padding: 0 10px;
+         max-width: 100%;
+      }
+
+      @include hover {
+         @include onhover;
+
+         .info-item_flexed__img {
+            opacity: 1;
+         }
+      }
+   }
+   @include hover {
+      &::after {
+         background: #3a3a3a;
+      }
+   }
+}

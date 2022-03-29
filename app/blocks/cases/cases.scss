@@ -1,0 +1,15 @@
+@import "../../scss/**/_*";
+
+.cases {
+   &__title {
+      color: $white;
+   }
+   &__paragraph {
+      max-width: 707px;
+      color: $grey;
+   }
+   &__wrap {
+      width: 100%;
+      height: 100%;
+   }
+}

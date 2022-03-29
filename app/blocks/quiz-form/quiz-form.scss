@@ -1,0 +1,171 @@
+@import "../../scss/**/_*";
+
+.quiz-form {
+   max-width: 1041px;
+   padding: 40px;
+   background: $black;
+   border-radius: 8px;
+   overflow: hidden;
+
+   @media (max-width: 480px) {
+      text-align: center;
+   }
+
+   &_disable {
+      display: inline-block;
+      padding: 0;
+      margin-bottom: 50px;
+      background: transparent;
+   }
+
+   &__block {
+      padding: 0;
+      border: none;
+      opacity: 0;
+
+      &_shown {
+         opacity: 1;
+         transition: 1s;
+      }
+   }
+
+   &__block-list {
+      transition: 0.3s;
+      display: grid;
+      grid-auto-columns: 100%;
+      grid-auto-flow: column;
+      grid-template-rows: auto;
+   }
+
+   &__title {
+      @include flex;
+
+      @media (max-width: 500px) {
+         flex-direction: column;
+      }
+   }
+
+   &__title-question {
+      font-family: "Montserrat", sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 160%;
+      color: $white;
+
+      @media (max-width: 670px) {
+         font-size: 18px;
+      }
+
+      @media (max-width: 500px) {
+         order: 2;
+      }
+   }
+
+   &__question {
+      &_hidden {
+         display: none;
+      }
+   }
+
+   &__block-pagination {
+      font-family: "STIX Two Text", sans-serif;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 45px;
+      color: $white;
+
+      @media (max-width: 480px) {
+         order: 1;
+      }
+
+      &_all {
+         color: $white;
+      }
+      &_current {
+         color: $red;
+      }
+   }
+
+   &__answers {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 15px;
+
+      @media (max-width: 670px) {
+         margin-top: 26px;
+         grid-template-columns: 1fr;
+         gap: 15px;
+      }
+   }
+
+   &__column {
+      @include flex(column, flex-start, normal);
+   }
+
+   &__variant {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 18px 20px;
+      @include buts;
+      color: $white;
+      @include normal;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      @media (max-width: 480px) {
+         font-size: 14px;
+      }
+
+      &:last-of-type {
+         margin-bottom: 0;
+      }
+
+      @include hover {
+         color: $red;
+      }
+   }
+
+   &__checkbox {
+      display: none;
+
+      &:checked + .quiz-form__variant {
+         background: $red;
+
+         @include hover {
+            color: $white;
+         }
+      }
+   }
+
+   &__pagination {
+      margin-top: 36px;
+      @include flex(row);
+
+      @media (max-width: 670px) {
+         margin-top: 26px;
+      }
+   }
+
+   &__pagination-button:last-of-type {
+      margin-left: 10px;
+   }
+
+   &__message {
+      text-align: left;
+      display: none;
+      cursor: default;
+      &_active {
+         display: block;
+      }
+   }
+
+   &__message-text {
+      color: $white;
+      @include sh1;
+
+      @media (max-width: 480px) {
+         @include sh2;
+      }
+   }
+}

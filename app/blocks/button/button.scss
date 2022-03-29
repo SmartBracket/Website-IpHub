@@ -1,0 +1,121 @@
+@import '../../scss/**/_*';
+
+.button {
+   
+   &_fill {
+      position: relative;
+      width: 299px;
+      height: 91px;
+      @include buts;
+      color:$white;
+      text-align: center;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      &_black{
+         background-color:$black;
+      }
+      &_red{
+          background-color:$red;
+      }
+      &::after {
+         content: "";
+         @include position(absolute, $top:0, $left:0);
+         width: 100%;
+         height: 100%;
+         transform-origin: center;
+         border: 1px solid $white;
+         border-radius: 50%;
+         opacity: 0;
+         transition: .5s;
+
+         @media (max-width: 550px){
+            opacity: 1;
+            transform: rotateZ(-6deg);
+         }
+      }
+
+      @include hover {
+         &::after {
+            @media (min-width: 550px){
+               opacity: 1;
+               transform: rotateZ(-6deg);
+            }
+         }
+      }
+   }
+
+   &_empty {
+      position: relative;
+      width: 135px;
+      height: 41px;
+      @include buts;
+      @include flex(row, center, center);
+      color: $red;
+      background-color: transparent;
+      border: 1px solid $red;
+      border-radius: 50%;
+      cursor: pointer;
+      &_right{
+         margin-right: 13px;
+         &__arrow{
+            @include position(absolute, $top:calc(50% - 1px), $right:-13px);
+            @include arrow($dir:right);
+            transition: transform .3s;
+         }
+      }
+      &_left {
+         margin-left: 13px;
+         &__arrow {
+            @include position(absolute, $top:calc(50% - 1px), $left:-13px);
+            @include arrow($dir:left);
+            transition: transform .3s;
+         }
+      }
+
+      @include hover {
+         .button_empty_right__arrow{
+            transform: translateX(8px);
+         }
+
+         .button_empty_left__arrow {
+            transform: translateX(-8px);
+         }
+      }
+   }
+   
+   &__slide{
+      position: relative;
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      border-radius:50%;
+      border: 1px solid $red;
+      background:transparent;
+      cursor: pointer;
+      &:first-of-type{
+         margin-right: 20px;
+      }
+      @include hover {
+         .button__slide-arrow_left {
+            transform: translateX(-6px);
+         }
+
+         .button__slide-arrow_right {
+            transform: translateX(6px);
+         }
+      }
+   }
+
+    &__slide-arrow_left {
+       @include position(absolute, $top:50%, $right:15px);
+       @include arrow($width:42px, $dir:left);
+       transition: .3s;
+    }
+
+    &__slide-arrow_right {
+       @include position(absolute, $top:50%, $left:15px);
+       @include arrow($width:42px, $dir:right);
+       transition: .3s;
+    }
+}

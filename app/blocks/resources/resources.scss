@@ -1,0 +1,13 @@
+@import "../../scss/**/_*";
+
+/*-resources */
+.resources {
+   &__title {
+      color: $black;
+   }
+
+   &__paragraph {
+      width: 700px;
+      color: $grey;
+   }
+}

@@ -1,0 +1,148 @@
+@import "../../scss/**/_*";
+
+.main {
+   overflow: hidden;
+
+   &__about {
+      padding-top: 109px;
+      padding-bottom: 160px;
+      background-blend-mode: multiply;
+      background: url(../imgs/main__bg.png) no-repeat center/cover;
+      background-color: #1b1b1b;
+
+      @media (max-width: 1000px) {
+         padding-bottom: 120px;
+      }
+
+      @media (max-width: 768px) {
+         padding-top: 70px;
+         padding-bottom: 80px;
+      }
+
+      @media (max-width: 480px) {
+         padding-top: 40px;
+         padding-bottom: 60px;
+      }
+   }
+
+   &__resources {
+      padding-top: 160px;
+      padding-bottom: 165px;
+      background-blend-mode: multiply;
+      background: url(../imgs/main__bg.png) no-repeat center/cover;
+      background-color: $white;
+
+      @media (max-width: 1000px) {
+         padding-top: 125px;
+         padding-bottom: 125px;
+      }
+
+      @media (max-width: 768px) {
+         padding-top: 80px;
+         padding-bottom: 85px;
+      }
+
+      @media (max-width: 480px) {
+         padding-top: 80px;
+         padding-bottom: 75px;
+      }
+
+      @media (max-width: 360px) {
+         padding-top: 60px;
+         padding-bottom: 55px;
+      }
+   }
+
+   &__quiz {
+      padding: 160px 0;
+      background-blend-mode: multiply;
+      background: url(../imgs/main__bg.png) no-repeat center/cover;
+      background-color: $red;
+
+      @media (max-width: 1000px) {
+         padding-top: 120px;
+         padding-bottom: 125px;
+      }
+
+      @media (max-width: 768px) {
+         padding-top: 80px;
+         padding-bottom: 85px;
+      }
+
+      @media (max-width: 480px) {
+         padding-top: 75px;
+         padding-bottom: 80px;
+      }
+
+      @media (max-width: 360px) {
+         padding-top: 55px;
+         padding-bottom: 60px;
+      }
+   }
+
+   &__cases {
+      padding: 160px 0;
+      background-blend-mode: multiply;
+      background: url(../imgs/main__bg.png) no-repeat center/cover;
+      background-color: $black;
+
+      @media (max-width: 1000px) {
+         padding-top: 120px;
+         padding-bottom: 125px;
+      }
+
+      @media (max-width: 768px) {
+         padding-top: 80px;
+         padding-bottom: 75px;
+      }
+
+      @media (max-width: 360px) {
+         padding-top: 60px;
+         padding-bottom: 55px;
+      }
+   }
+
+   &__team {
+      padding: 160px 0;
+      background-blend-mode: multiply;
+      background: url(../imgs/main__bg.png) no-repeat center/cover;
+      background-color: $white;
+
+      @media (max-width: 1000px) {
+         padding-top: 120px;
+         padding-bottom: 125px;
+      }
+
+      @media (max-width: 768px) {
+         padding-top: 80px;
+         padding-bottom: 75px;
+      }
+
+      @media (max-width: 360px) {
+         padding-top: 60px;
+         padding-bottom: 55px;
+      }
+   }
+
+   &__ask {
+      padding: 100px 0;
+      background-blend-mode: multiply;
+      background: url(../imgs/main__bg.png) no-repeat center/cover;
+      background-color: $red;
+
+      @media (max-width: 1000px) {
+         padding-top: 120px;
+         padding-bottom: 125px;
+      }
+
+      @media (max-width: 768px) {
+         padding-top: 80px;
+         padding-bottom: 75px;
+      }
+
+      @media (max-width: 360px) {
+         padding-top: 60px;
+         padding-bottom: 55px;
+      }
+   }
+}

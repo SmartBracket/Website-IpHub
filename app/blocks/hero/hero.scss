@@ -1,0 +1,154 @@
+@import '../../scss/**/_*';
+
+.hero {
+   &__container {
+      display: grid;
+      grid-template-columns: 598px minmax(450px, 1fr);
+      row-gap: 35px;
+      column-gap: 90px;
+      grid-template-rows: auto 91px;
+
+      @media (max-width: 1000px) {
+         grid-template-columns: 456px minmax(390px, 1fr);
+         column-gap: 25px;
+      }
+
+      @media (max-width: 768px) {
+         grid-template-columns: 420px minmax(255px, 1fr);
+      }
+
+      @media (max-width: 550px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: auto auto;
+         row-gap: 25px;
+      }
+   }
+
+   &__text {
+      margin-left: 12px;
+
+      @media (max-width: 1000px) {
+         margin-right: 0;
+      }
+      @media (max-width: 550px) {
+         text-align: center;
+         margin-left: 0;
+      }
+   }
+
+   &__subtitle {
+      @include legend;
+      color: $grey;
+   }
+
+   &__title {
+      @include position(relative);
+      margin-top: 0;
+      margin-bottom: 16px;
+      @include h1;
+      color: $white;
+      margin-top: 8px;
+   
+      &_cursive {
+         font-style: italic;
+
+         &::after {
+            width: 11px;
+            height: 14px;
+            @include position(absolute, $top:7px, $right:-12px);
+
+            @media (max-width: 550px) {
+               display: none;
+            }
+         }
+      }
+      
+      &::before {
+         content: "";
+         width: 11px;
+         height: 14px;
+         @include position(absolute, $top:10px, $left:-12px);
+         @media (max-width: 550px) {
+            display: none;
+         }
+      }
+
+   }
+
+   &__paragraph {
+      font-family: "Montserrat",
+         sans-serif;
+      font-size: 18px;
+      color: $grey;
+      line-height: 29px;
+
+      @media (max-width: 1000px) {
+         font-size: 16px;
+         line-height: 25.6px;
+      }
+
+      @media (max-width: 480px) {
+         font-size: 14px;
+         line-height: 22px;
+      }
+   }
+
+   &__buttons-wrap{
+      margin-left: 12px;
+      grid-column: 1/2;
+      position: relative;
+
+      @media (max-width: 550px) {
+         margin-left: 0;
+      }
+   }
+   
+   &__buttons {
+      position: absolute;
+      top:0;
+      @include flex(row, flex-start, center);
+
+      @media (max-width: 550px) {
+         position:relative;
+         @include flex(column, flex-start, center);
+      }
+   }
+
+   &__button_empty{
+      margin-right: 0;
+   }
+
+   &__button_fill {
+      margin-right: 42px;
+
+      @media (max-width: 1000px) {
+         margin-right: 25px;
+      }
+
+      @media (max-width: 550px) {
+         margin-bottom: 22px;
+         margin-right: 0;
+      }
+   }
+
+   &__decor-wrap {
+      position: relative;
+      grid-column: 2/3;
+      grid-row: 1/3;
+
+      @media (max-width: 550px) {
+         display: none;
+      }
+   }
+
+   &__decor {
+      width:100%;
+      height: 100%;
+      background: url(../imgs/decor__item1-1.png) no-repeat center/90%;
+      position: absolute;
+      top:0;
+      left:0;
+
+   }
+
+}

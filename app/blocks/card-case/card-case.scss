@@ -1,0 +1,81 @@
+@import "../../scss/**/_*";
+
+.card-case {
+   position: relative;
+   @include normal;
+   @include flex(row);
+   border-radius: 8px;
+   overflow: hidden;
+   transition: background 0.3s;
+
+   @media (max-width: 400px) {
+      @include flex(column, flex-start, flex-start);
+   }
+
+   &__img-block {
+      flex: 0 0 289px;
+      height: 100%;
+      padding: 0 40px;
+      @include flex(row, center, center);
+      @include normal;
+
+      @media (max-width: 1000px) {
+         flex: 0 0 160px;
+         padding: 0 15px;
+      }
+
+      @media (max-width: 768px) {
+         flex: 0 1 700px;
+      }
+
+      @media (max-width: 480px) {
+         min-width: 150px;
+         width: 100%;
+         height: 100%;
+      }
+      @media (max-width: 400px) {
+         padding: 25px 40px;
+         flex: 0 1 150px;
+      }
+   }
+   &__img {
+      max-width: 100%;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+   }
+   &__info {
+      padding: 20px;
+   }
+   &__title {
+      @include sh3;
+      color: $white;
+      margin-bottom: 8px;
+      margin-right: 20px;
+   }
+   &__paragraph {
+      @include label;
+      color: $grey;
+   }
+
+   &__arrow {
+      content: "";
+      @include position(absolute, $right: 20px, $top: 20px);
+      @include arrow($width: 25.5px, $height: 2px, $dir: right, $arrows: 18px, $angle: 45deg, $color: $white);
+      transform-origin: right;
+      transform: rotateZ(-45deg);
+      opacity: 0.3;
+      transition: opacity 0.3s;
+   }
+
+   @include hover {
+      @include onhover;
+
+      .card-case__img {
+         opacity: 1;
+      }
+
+      .card-case__arrow {
+         opacity: 1;
+      }
+   }
+}

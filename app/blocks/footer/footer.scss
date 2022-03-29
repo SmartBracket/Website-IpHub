@@ -1,0 +1,235 @@
+@import "../../scss/**/_*";
+
+.footer {
+   padding-top: 100px;
+   padding-bottom: 45px;
+   background-blend-mode: multiply;
+   background: url(../imgs/main__bg.png) no-repeat center/cover;
+   background-color: $black;
+
+   @media (max-width: 1000px) {
+      padding-top: 120px;
+   }
+
+   @media (max-width: 768px) {
+      padding-top: 80px;
+   }
+
+   @media (max-width: 360px) {
+      padding-top: 60px;
+   }
+
+   &__about {
+      position: relative;
+      padding-bottom: 50px;
+      display: grid;
+      grid-template-columns: 210px 1fr 270px;
+
+      @media (max-width: 1000px) {
+         gap: 20px;
+         grid-template-columns: 210px 1fr;
+         grid-template-rows: auto auto;
+      }
+
+      @media (max-width: 360px) {
+         grid-template-columns: 1fr;
+      }
+
+      &::after {
+         content: "";
+         @include position(absolute, $bottom: 0);
+         width: 100%;
+         height: 2px;
+         background: linear-gradient(to right, rgba(92, 92, 92, 1), rgba(92, 92, 92, 0));
+      }
+   }
+
+   &__logo {
+      &::after {
+         @media (max-width: 360px) {
+            display: none;
+         }
+      }
+      &::before {
+         @media (max-width: 360px) {
+            display: none;
+         }
+      }
+   }
+
+   &__logo-img {
+      width: 195px;
+   }
+
+   &__logo-descr {
+      max-width: 515px;
+      margin-left: 20px;
+      margin-right: 15px;
+      @include label;
+      color: $grey;
+
+      @media (max-width: 1000px) {
+         margin-left: 0px;
+         margin-right: 0px;
+      }
+
+      @media (max-width: 630px) {
+         grid-row: 2/3;
+         grid-column: 1/3;
+      }
+   }
+
+   &__location {
+      @include label;
+      color: $white;
+
+      @media (max-width: 1000px) {
+         grid-column: 2/3;
+      }
+      @media (max-width: 768px) {
+         display: flex;
+         margin-right: 15px;
+      }
+      @media (max-width: 630px) {
+         grid-column: 1/3;
+      }
+   }
+
+   &__codes {
+      display: flex;
+      margin-top: 10px;
+
+      @media (max-width: 768px) {
+         margin-left: 20px;
+         margin-top: 0;
+      }
+   }
+
+   &__codes-item {
+      margin-right: 15px;
+
+      @media (max-width: 768px) {
+         margin-right: 0;
+      }
+
+      &:last-of-type {
+         margin-right: 0;
+      }
+   }
+
+   &__codes_dark {
+      color: $grey;
+   }
+
+   &__menu-wrap {
+      &:last-of-type {
+         @media (max-width: 768px) {
+            display: none;
+         }
+      }
+      &:nth-last-of-type(2) {
+         @media (max-width: 480px) {
+            grid-column: 1/3;
+         }
+
+         @media (max-width: 480px) {
+            .footer__menu-list {
+               flex-direction: row;
+            }
+            .footer__menu-link {
+               margin-right: 30px;
+            }
+         }
+      }
+   }
+
+   &__menu {
+      margin-top: 50px;
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: auto auto auto auto;
+      column-gap: 20px;
+
+      @media (max-width: 768px) {
+         grid-template-columns: auto auto auto;
+      }
+
+      @media (max-width: 480px) {
+         grid-template-columns: 1fr 1fr;
+         row-gap: 25px;
+      }
+   }
+   &__menu-title {
+      margin-bottom: 20px;
+      @include sh2;
+      color: $dark-grey;
+   }
+   &__menu-list {
+      @include flex(column, flex-start, flex-start);
+   }
+   &__menu-item {
+      margin-bottom: 15px;
+      @include buts;
+
+      &:last-of-type {
+         margin-bottom: 0;
+      }
+   }
+
+   &__menu-link {
+      color: $white;
+      transition: color 0.3s;
+      @include hover {
+         color: $red;
+      }
+   }
+
+   &__rights {
+      margin-top: 50px;
+      @include flex;
+
+      @media (max-width: 480px) {
+         margin-top: 30px;
+         flex-direction: column;
+         align-items: flex-start;
+      }
+   }
+
+   &__rights-reserved {
+      @include label;
+      color: $grey;
+
+      @media (max-width: 768px) {
+         margin-right: 15px;
+      }
+
+      @media (max-width: 480px) {
+         margin-right: 0;
+         order: 2;
+      }
+   }
+
+   &__rights-link {
+      @include label;
+      color: $white;
+      transition: color 0.3s;
+
+      @media (max-width: 768px) {
+         margin-right: 15px;
+      }
+
+      @media (max-width: 480px) {
+         margin-right: 0;
+      }
+
+      @include hover {
+         color: $red;
+      }
+
+      &:last-of-type {
+         @media (max-width: 768px) {
+            margin-right: 0;
+         }
+      }
+   }
+}

@@ -1,0 +1,201 @@
+@mixin font-face($name, $file, $weight: 400, $style: normal) {
+   @font-face {
+      font-family: "#{$name}";
+      src: local("#{$file}"), url("../fonts/#{$file}.woff2") format("woff2"),
+         url("../fonts/#{$file}.woff") format("woff");
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+   }
+}
+
+@mixin active {
+   background: rgba(255, 255, 255, 0.15);
+}
+
+@mixin onhover {
+   background: rgba(255, 255, 255, 0.1);
+}
+
+@mixin normal {
+   background: rgba(255, 255, 255, 0.05);
+}
+
+@mixin h1 {
+   font-family: "STIX Two Text", sans-serif;
+   font-size: 55px;
+   font-weight: 500;
+   line-height: 74px;
+
+   @media (max-width: 1000px) {
+      font-size: 48px;
+      line-height: 64px;
+   }
+
+   @media (max-width: 768px) {
+      font-size: 44px;
+      line-height: 59px;
+   }
+
+   @media (max-width: 480px) {
+      font-size: 34px;
+      line-height: 45px;
+   }
+}
+
+@mixin h2 {
+   font-family: "STIX Two Text", sans-serif;
+   font-size: 38px;
+   font-weight: 400;
+   line-height: 135%;
+
+   @media (max-width: 768px) {
+      font-size: 32px;
+   }
+
+   @media (max-width: 480px) {
+      font-size: 28px;
+   }
+
+   @media (max-width: 360px) {
+      font-size: 24px;
+   }
+}
+
+@mixin sh1 {
+   font-family: "Montserrat", sans-serif;
+   font-size: 24px;
+   font-weight: 500;
+   line-height: 160%;
+}
+
+@mixin sh2 {
+   font-family: "Montserrat", sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+   line-height: 160%;
+}
+
+@mixin sh3 {
+   font-family: "Montserrat", sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 160%;
+
+   @media (max-width: 360px) {
+      font-size: 14px;
+   }
+}
+
+@mixin butb {
+   font-family: "Montserrat", sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 160%;
+}
+
+@mixin buts {
+   font-family: "Montserrat", sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 140%;
+
+   @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 25px;
+   }
+
+   @media (max-width: 360px) {
+      font-size: 14px;
+      line-height: 22px;
+   }
+}
+
+@mixin label {
+   font-family: "Montserrat", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 165%;
+}
+
+@mixin legend {
+   font-family: "Montserrat", sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 160%;
+}
+
+@mixin hover {
+   &:hover {
+      @content;
+   }
+}
+
+@mixin flex($dir: row, $just: space-between, $al: center) {
+   display: flex;
+   flex-direction: $dir;
+   justify-content: $just;
+   align-items: $al;
+}
+
+@mixin position($pos, $top: null, $left: null, $bottom: null, $right: null) {
+   position: $pos;
+
+   @if ($top) {
+      top: $top;
+   }
+
+   @if ($right) {
+      right: $right;
+   }
+
+   @if ($bottom) {
+      bottom: $bottom;
+   }
+
+   @if ($left) {
+      left: $left;
+   }
+}
+
+@mixin arrow($width: 30px, $height: 1px, $dir: right, $arrows: 6px, $angle: 40deg, $color: $red) {
+   width: $width;
+   height: $height;
+   background: $color;
+
+   &::before {
+      content: "";
+      position: absolute;
+
+      @if $dir==right {
+         right: 0;
+         transform-origin: right;
+      } @else if $dir==left {
+         left: 0;
+         transform-origin: left;
+      }
+
+      width: $arrows;
+      height: $height;
+      background: $color;
+      transform: rotateZ(-$angle);
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+
+      @if $dir==right {
+         right: 0;
+         transform-origin: right;
+      } @else if $dir==left {
+         left: 0;
+         transform-origin: left;
+      }
+
+      width: $arrows;
+      height: $height;
+      background: $color;
+      transform: rotateZ($angle);
+   }
+}

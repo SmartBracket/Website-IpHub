@@ -1,0 +1,103 @@
+@import "../../scss/**/_*";
+
+.slider {
+   @include flex(column, center, flex-start);
+   &__list {
+      position: relative;
+      left: 0;
+      transition: 0.5s;
+   }
+
+   &__item {
+      opacity: 1;
+      transition: opacity 0.7s;
+      &_hidden {
+         opacity: 0;
+      }
+   }
+
+   &__cases {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 598px;
+      grid-template-rows: 289px;
+      column-gap: 20px;
+
+      @media (max-width: 1000px) {
+         grid-auto-columns: calc(((100vw - 40px) / 2) - 40px / 2);
+         grid-template-rows: 315px;
+      }
+
+      @media (max-width: 768px) {
+         grid-auto-columns: calc(100vw - 40px - 20px);
+         grid-template-rows: 355px;
+      }
+
+      @media (max-width: 480px) {
+         grid-auto-columns: calc(100vw - 40px - 20px);
+         grid-template-rows: auto;
+      }
+      @media (max-width: 360px) {
+         grid-auto-columns: calc(100vw - 20px - 20px);
+      }
+   }
+
+   &__serve {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 289px;
+      grid-template-rows: 400px;
+      column-gap: 20px;
+
+      @media (max-width: 1000px) {
+         grid-auto-columns: calc(((100vw - 40px) / 3) - 40px / 2);
+         grid-template-rows: 380px;
+      }
+
+      @media (max-width: 768px) {
+         grid-template-rows: auto;
+      }
+
+      @media (max-width: 480px) {
+         grid-auto-columns: calc(((100vw - 40px) / 2) - 20px);
+      }
+
+      @media (max-width: 360px) {
+         grid-auto-columns: calc(100vw - 20px - 20px);
+      }
+   }
+
+   &__team {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 289px;
+      grid-template-rows: auto;
+      column-gap: 20px;
+
+      @media (max-width: 1000px) {
+         grid-auto-columns: calc(((100vw - 40px) / 3) - 40px / 2);
+      }
+
+      @media (max-width: 480px) {
+         grid-auto-columns: calc(((100vw - 40px) / 2) - 20px);
+      }
+
+      @media (max-width: 360px) {
+         grid-auto-columns: calc(100vw - 20px - 20px);
+      }
+   }
+
+   &__pagination {
+      display: grid;
+      grid-auto-flow: column;
+      @include flex;
+      align-self: center;
+      margin-top: 30px;
+   }
+
+   &__button {
+      @media (max-width: 768px) {
+         display: none;
+      }
+   }
+}

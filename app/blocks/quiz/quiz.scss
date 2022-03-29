@@ -1,0 +1,15 @@
+@import '../../scss/**/_*';
+
+.quiz {
+   &__title {
+      color: $white;
+   }
+
+   &__paragraph {
+      color: $white;
+   }
+
+   &__form {
+      margin-bottom: 50px;
+   }
+}
